@@ -28,3 +28,30 @@
 4. Natural Language Processing
 
 - Regular things such as What time we are closing today? => Model will track the usual work timings, and it will tell us the average opening or close timins. Break timings.
+
+# Agentic AI with Azure
+
+![Quick Picture](https://github.com/user-attachments/assets/eabd0bc9-d97e-4d2c-a837-4f0bbbe954bd)
+
+### LLM (Large Language Model)
+
+- `LLM` is built by **Neural Network Architecture**. Which accepts some input parameter and analyze all the **differenct aspects** of it at the Hidden Layer and produces the output.
+- `Foundation Model` is the specific instance or version of the LLM. Eg, GPT-3, GPT-4, Codex.
+
+![LLM](https://github.com/user-attachments/assets/9c9bf807-bff8-49b7-9a28-21bacf1ae043)
+
+- Initially LLMs are respond to the user based on its **trained data set**.
+- Then developers have added `tools chain` with the LLM to increase its capabilities. That is **RAG(Retrieval Augmented Generation)** - which allows LLM to generate Tickets or send emails with the help of tools.
+- Then AI Agents came into the picture, it will understand the problems in the prompts and **dynamically decide which tool to use** (we are giving full freedom to it) and generate the response for us.
+
+![AI Agent](https://github.com/user-attachments/assets/59304421-5fae-438f-a894-0152bbe7cde4)
+
+## Creation of Azure Open AI Resource
+
+- Just create a Azure Open AI Resource with **S0 price tier**.
+- After open it, click the Microsoft Foundry Panel.
+- In the panel, we have to create a Deployment Model (Chat Completion Model).
+- I have created GPT-4.1-nano - capability is 120K tokens, standard type.
+- After deploying it, we have to chat with it, through Chat window.
+- First we have to specify the **System Prompt**. Then in our upcoming prompt, our LLM will give the answer based on the System Prompt's context.
+- It will have some input Parameters also. `Temperature` (range is 0 - 1), if mininum value has been set, then our LLM will give the more **accurate outputs**, if we set the maximum value, it will give the more **creative outputs**.
