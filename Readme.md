@@ -55,3 +55,29 @@
 - After deploying it, we have to chat with it, through Chat window.
 - First we have to specify the **System Prompt**. Then in our upcoming prompt, our LLM will give the answer based on the System Prompt's context.
 - It will have some input Parameters also. `Temperature` (range is 0 - 1), if mininum value has been set, then our LLM will give the more **accurate outputs**, if we set the maximum value, it will give the more **creative outputs**.
+
+## Microsoft Foundry
+
+- There are two types of Foundry projects
+
+1. Standalone Foundry Project
+2. AI-Hub based Foundry project
+
+- Hub based project is the old one(Classic approach), Where we can share multiple projects across the team. Applicable for the organization level (Hierarchy based).
+  > In portal, Switch button isn't enabled.
+- Whereas, Standalone project(new approach) is for the individual one, which is applicable for the simple projects for a specific purpose.
+  > In portal, Switch button is enabled.
+
+#### While creating the AI-Hub, we got created AI services which enabled Multi-Model nature for out projects (Not only the Text as the input, we can give Speech, Image or Document), which is including some extra capabilities for out model.
+
+### Azure AI Studio Architecture (Hub based Foundry Project)
+
+![AI Studio Architecture](https://github.com/user-attachments/assets/7780c6a6-7ccd-4d01-8f5b-621082fc9a6e)
+
+1. AI Hub
+2. Projects
+3. Management Centre - If we create Management center at the Hub level, then all the projects or services created under it, will share it.
+4. AI services
+5. AI Capabilities - Multimodel in nature
+6. Storage - While creating AI Hub, Storage and Keyvault are generating within that resource. Storage account caputes the logs and helps for troubleshooting.
+7. Key Vault - Manages the secret keys for Management centre.
