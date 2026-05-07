@@ -81,3 +81,40 @@
 5. AI Capabilities - Multimodel in nature
 6. Storage - While creating AI Hub, Storage and Keyvault are generating within that resource. Storage account caputes the logs and helps for troubleshooting.
 7. Key Vault - Manages the secret keys for Management centre.
+
+## Azure Agentic AI Horizon
+
+![Azure Agentic AIs](https://github.com/user-attachments/assets/97214e47-dfd4-4348-bd94-373fb40dfe72)
+
+- There are two types of Agentic AI present in Azure environment.
+
+1. Declarative Agents - Which have Azure Models and Azure Orchestrating Services
+2. Custom Engine Agents - We have built our own Models and own Orchestrating Services.
+
+- `Microsoft Copilot Studio` - Low to No code platform - Declarative Agents - In Align with M365.
+- `Microsoft Teams Toolkit` - Pro code platform - Custom Engine Agents - Especially for Teams experience.
+- `Azure AI Agentic Services + Semantic Kernel SDKs` - Pro code platform - Custome Engine Agents - In Align with M365.
+
+### Azure Agentic AI Serivces
+
+![Agentic AI](https://github.com/user-attachments/assets/5b02cf42-ea63-4ddb-b5a6-6a0001e0884e)
+
+![Agents Components](https://github.com/user-attachments/assets/f134b9ed-3c37-40c1-8055-471b11188bf0)
+
+![Why Azure AI Agents](https://github.com/user-attachments/assets/44d45cbb-26da-4f86-b522-47d077898e27)
+
+- After creating the AI-Hub and Project inside it. We have to connect our Azure Open AI resource model into it.
+- In the Microsoft Foundry Panel, look for Management Center and create a connection to our OpenAI resource.
+- On the Agents tab, we can create Agent and each user can have unique thread to the Agent.
+- Agent will look all the history in the same thread, and give back response accordingly.
+
+![Chat Completions, Assistant API, Agents](https://github.com/user-attachments/assets/e994ba0c-2d2d-4443-9946-e50bbaa10d60)
+
+### Azure AI Agents with Function Calling
+
+- Actually if the LLM calls multiple tools for data retrieving, then it is an Agent.
+- In Function calling, we will write two separate code snippet by Python/C#, one is Mathematical Computation and other one is for Calling APIs through HTTP.
+
+![Function calling](https://github.com/user-attachments/assets/4f767c9f-ccf2-4617-9c4f-3bd86bc84cac)
+
+> How Agent call functions -> Once the user given the input, the Agent only determines which function to call based on the reading from each Custom functions descriptions
