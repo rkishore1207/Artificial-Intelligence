@@ -118,3 +118,67 @@
 ![Function calling](https://github.com/user-attachments/assets/4f767c9f-ccf2-4617-9c4f-3bd86bc84cac)
 
 > How Agent call functions -> Once the user given the input, the Agent only determines which function to call based on the reading from each Custom functions descriptions
+
+### OpenAPI Schema
+
+- To call any Open API endpoints, we have to follow some procedure or pre defined schema.
+
+```C#
+  var tools = new List<ChatTool>
+  {
+      ChatTool.CreateFunctionTool(
+          functionName: "GetCurrentWeather",
+          functionDescription: "Gets the current weather for a given location",
+          functionParameters: BinaryData.FromString("""
+          {
+              "type": "object",
+              "properties": {
+                  "location": {
+                      "type": "string",
+                      "description": "The location to get the weather for (e.g., city name, coordinates)"
+                  }
+              },
+              "required": ["location"]
+          }
+          """)
+      ),
+      ChatTool.CreateFunctionTool(
+          functionName: "GetUserDetailById",
+          functionDescription: "Gets user details by user ID from the system",
+          functionParameters: BinaryData.FromString("""
+          {
+              "type": "object",
+              "properties": {
+                  "userId": {
+                      "type": "integer",
+                      "description": "The ID of the user to retrieve details for"
+                  }
+              },
+              "required": ["userId"]
+          }
+          """)
+      )
+  };
+```
+
+![Open API](https://github.com/user-attachments/assets/ba0ed838-131f-41a7-bc5f-8543178286f5)
+
+## RAG (Retrieval Augmented Generation)
+
+- It is an concept which allows a Gen AI Chat Engine to answer the user queries those information might not be present in the existing database.
+- On the flow, Agent will look into the documents and extract the information and answer to the questions.
+- For Example, we are having the Travel Agency website. It have lot of different information, texts, PDFs, images, videos, etc...
+- Now if we want to bring an Agent on top of it, this RAG will help the Agent to look into all the images or documents based on the user queries and retrive the answer for it.
+- Ans also if we don't want to expose the organization's data, we can prefer the RAG.
+
+![RAG](https://github.com/user-attachments/assets/cac84824-414a-4080-a410-519128ad9850)
+
+![RAG Architecture](https://github.com/user-attachments/assets/eb944672-8aa4-4e8e-a43a-6dc252389b4b)
+
+#### Vector Embeddings
+
+- Vector Embeddings helps the Agent to **Organize the informations** in the retrieved documents to a **particular pattern**.
+- Actually vector embedding will happen for `User Prompts and the retrieved documents information` and store it as a **Numerical format** in _Vector 3rd space_.
+- Then by applying **mathematical techniques** to organize it in a specific pattern.
+
+![Vector Embeddings](https://github.com/user-attachments/assets/dea58946-4b49-4073-98ee-10234fa5a9ca)
