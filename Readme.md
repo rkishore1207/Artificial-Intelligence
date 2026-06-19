@@ -217,3 +217,18 @@
 ![RAG](https://github.com/user-attachments/assets/fd1aa012-e7b5-42a9-b1a1-01f9d9d77180)
 
 ![](https://github.com/user-attachments/assets/120d8d58-f27d-4cc9-a69e-1b17072dfaa4)
+
+## MCP (Model Context Protocol)
+
+- I am calling external weather API in my code through Function calling.
+- I would use the API URL and will provide the Request based on some format.
+- Then will expects the response in particular format structure.
+- But what if, the API's response format has changed, then our application would also break.
+- To resolve the problem, we have introduced MCP.
+
+![MCP](https://github.com/user-attachments/assets/dee663ba-de70-4e2f-b988-8dcff0ac5b8c)
+
+- MCP acts as an universal Interface between the LLMs and external resource to enable seamless, secure and scallable data exchange.
+- **It's like a USB-C for AI**
+
+![MCP](https://github.com/user-attachments/assets/742d9631-646c-47f5-8746-2f5de79665f4)
