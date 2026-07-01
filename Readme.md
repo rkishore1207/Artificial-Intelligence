@@ -232,3 +232,45 @@
 - **It's like a USB-C for AI**
 
 ![MCP](https://github.com/user-attachments/assets/742d9631-646c-47f5-8746-2f5de79665f4)
+
+## How LLMs are getting Trained
+
+- User given the **sentence(Natural Language)** into LLM for training, In the first step - those sentences were converted into `Tokens` by **Tokenizer**.
+- The LLM analyzes the semantic relationships between tokens, such as how commonly they're used together or whether they're used in similar contexts. After training, the LLM uses those patterns and relationships to generate a sequence of output tokens based on the input sequence.
+
+### Understanding Tokens
+
+- First the converted tokens were assigned an ID and hit the LLM with Sequence of IDs.
+
+- Consider this example sentence:
+  > `I heard a dog bark loudly at a cat`
+
+* After the model uses a word tokenization method, it could assign token IDs as follows:
+  I (1)
+  heard (2)
+  a (3)
+  dog (4)
+  bark (5)
+  loudly (6)
+  at (7)
+  a (the "a" token is already assigned an ID of 3)
+  cat (8)
+
+* These token ID sequences reveal the **semantic relationships** between tokens. Multi-valued numeric vectors, known as `embeddings`, represent these relationships. The model assigns anembedding to each token based on how commonly it's used together with, or in similar contexts to, the other tokens.
+
+### Common Tokenization Methods
+
+- **Word tokenization** (text is split into individual words based on a delimiter)
+- **Character tokenization** (text is split into individual characters)
+- **Subword tokenization** (text is split into partial words or character sets)
+
+### Token Limits
+
+- LLMs have a maximum number of tokens for input and output. This limit is often expressed as a combined maximum `context window` that covers both input and output tokens together.Taken together, a model's token limit and tokenization method determine the maximum length of text that can be provided as input or generated as output.
+
+For example, consider a model that has a maximum context window of 100 tokens. The modelprocesses the example sentences as input text:
+
+> `I heard a dog bark loudly at a cat`
+
+- By using a word-based tokenization method, the input is nine tokens. This leaves 91 word tokens available for the output.
+- By using a character-based tokenization method, the input is 34 tokens (including spaces). This leaves only 66 character tokens available for the output.
