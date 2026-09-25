@@ -274,3 +274,7 @@ For example, consider a model that has a maximum context window of 100 tokens. T
 
 - By using a word-based tokenization method, the input is nine tokens. This leaves 91 word tokens available for the output.
 - By using a character-based tokenization method, the input is 34 tokens (including spaces). This leaves only 66 character tokens available for the output.
+
+> https://learn.microsoft.com/en-us/azure/search/retrieval-augmented-generation-overview?tabs=videos
+
+> https://learn.microsoft.com/en-us/dotnet/ai/vector-stores/tutorial-vector-search
